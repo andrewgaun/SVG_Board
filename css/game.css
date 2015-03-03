@@ -1,0 +1,30 @@
+#board, svg { position:absolute }
+#board { top:0; left:0; bottom:0; right:0} 
+svg  {
+		top:0;
+		left:0;
+		bottom:0;
+		right:0;
+} 
+.israel, .water { fill: #0038b8; stroke: black; strokeWidth: 3; }
+.ireland, .grass { fill: #009a49; stroke: black; strokeWidth: 3; }
+
+	
+.attack {fill:red}
+.move {fill:blue}
+.highlight { fill-opacity : .4}
+	
+.mountain { fill: #404040; stroke: black; strokeWidth: 3; }
+	
+.direction {
+	fill: #006464; stroke: black; strokeWidth: 3;
+}
+.direction.spent {
+	fill: black;
+}
+#menu {
+	fill : black;
+	fill-opacity : .5;
+}
+
+#menu text {fill: white; font-family: "Comic Sans MS";fill-opacity : 1;}

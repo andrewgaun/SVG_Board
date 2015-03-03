@@ -1,0 +1,80 @@
+<!DOCTYPE html >
+<html>
+ <head>
+  <script src="js/jquery.min.js"></script>
+  <script src="js/jquery.svg.js"></script>
+  <script src="js/geoUtil.js"></script>
+  <script src="js/board.js"></script>
+  <script src="js/unit.js"></script>
+  <script src="js/tile.js"></script>
+  <script src="js/row.js"></script>
+  
+  <link rel="stylesheet" type="text/css" href="css/game.css"/>
+  
+  <script type="application/javascript">
+  	
+  	function main(svg) {
+  		var _this = $(this);
+	  	board = new Board({ svg : svg, 
+	  				width : _this.innerWidth(),
+	  				height : _this.innerHeight(),
+	  				terrains : [{ href : 'images/mountain.png',
+	  					width: 40, 
+	  					height : 40,
+	  					name : 'mountain',
+	  					key : 'm',
+	  					impassable : true
+	  				}, { name : 'grass', key : 'g', land: true}, 
+	  				{ name : 'water', key : 'w', water: true}],
+	  				resourse : [{ href : 'images/walbrzych.svg',
+	  					width: 530.285, 
+	  					height : 673.324,
+	  					name : 'tree',
+	  				}],
+	  				buildings : [{ href : 'images/building.png',
+	  					width: 126, 
+	  					height : 177,
+	  					name : 'building',
+	  				}, { href : 'images/city.png',
+	  					width: 40, 
+	  					height : 40,
+	  					name : 'city',
+	  				}],
+	  				unitsTypes : [{ href : 'images/ww2.png',
+	  					width: 40, 
+	  					height : 40,
+	  					name : 'ww2',
+	  					move : 3,
+	  					range : 2,
+	  					str : 10
+	  				}],
+	  				initalSetup : [{ 
+	  					ww2 : [[2,5], [3,7]]
+	  				},{ 
+	  					ww2 : [[15,5], [15,3]]
+	  				}],
+	  				layout : 'ggggggmgggggggggggggggggggggg\n'+
+'gggwgggmggggggggggggggggggggg\n' +
+'ggggwwggggggggggggggggggggggg\n' +
+'gggggwwwmgggggggggggggggggggg\n' +
+'gggwwwwwwgggggggggggggggggggg\n' +
+'ggggggggggggggggggggggggggggg\n' +
+'gggggmmgggggggggggggggggggggg\n' +
+'ggggmmmmmgggggggggggggggggggg\n' +
+'ggmmmgggggggggggggggggggggggg\n' +
+'ggmmmmggggggggggggggggggggggg\n' +
+'ggggggggggggggggggggggggggggg\n' +
+'ggggggggggggggggggggggggggggg\n' + 
+'ggggggggggggggggggggggggggggg' 
+	  			});
+	}
+
+    $(document).ready(function () {
+		$('#board').svg({onLoad: main});
+    });
+  </script>
+ </head>
+ <body>
+   <div id="board"/>
+ </body>
+</html>
